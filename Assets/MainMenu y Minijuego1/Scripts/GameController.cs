@@ -17,11 +17,29 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("MenuScene"); 
     }
 
+    public void ActiveMenuPageScene(){
+        SceneManager.LoadScene("MenuPageScene"); 
+    }
+
     public void ActiveLoginScene(){
         SceneManager.LoadScene("LoginScene"); 
     }
 
+    public void ActiveSettingScene(){
+        SceneManager.LoadScene("SettingScene"); 
+    }
+
+    public void ActiveLeaderboardScene(){
+        SceneManager.LoadScene("LeaderboardScene"); 
+    }
+
     // Minijuego 1: Diego -> Casher
+    public void ActiveInstructionCajaScene()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("InstructionCajaScene"); 
+    }
+
     public void ActiveCasherScene()
     {
         PlayerPrefs.DeleteAll();

@@ -6,22 +6,34 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MainMenu y Minijuego1/Scenes/LoginScene.unity
+    path: Assets/MainMenu y Minijuego1/Scenes/Menu/LoginScene.unity
     guid: 416477561733b428c9edf6b5a7a1b128
   - enabled: 1
-    path: Assets/MainMenu y Minijuego1/Scenes/MenuScene.unity
+    path: Assets/MainMenu y Minijuego1/Scenes/Menu/MenuPageScene.unity
+    guid: 09e07f7ff37a24fee8fba409f14aba5c
+  - enabled: 1
+    path: Assets/MainMenu y Minijuego1/Scenes/Menu/SettingScene.unity
+    guid: bf7f642271c6d4b20a1be1b6a1649707
+  - enabled: 1
+    path: Assets/MainMenu y Minijuego1/Scenes/Menu/LeaderboardScene.unity
+    guid: 88aaae864f11a4515b007c74ffbda098
+  - enabled: 1
+    path: Assets/MainMenu y Minijuego1/Scenes/Menu/MenuScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/MainMenu y Minijuego1/Scenes/CasherScene.unity
+    path: Assets/MainMenu y Minijuego1/Scenes/Caja/InstructionCajaScene.unity
+    guid: 950cbf57b2f98405a97e74c55773dada
+  - enabled: 1
+    path: Assets/MainMenu y Minijuego1/Scenes/Caja/CasherScene.unity
     guid: 141ce9f1267f24cedaeac9b26c8c08f8
   - enabled: 1
-    path: Assets/MainMenu y Minijuego1/Scenes/PapasScene.unity
+    path: Assets/MainMenu y Minijuego1/Scenes/Caja/PapasScene.unity
     guid: 58cb3cd9528804b22ad93db0e097a738
   - enabled: 1
-    path: Assets/MainMenu y Minijuego1/Scenes/BookScene.unity
+    path: Assets/MainMenu y Minijuego1/Scenes/Caja/BookScene.unity
     guid: 1f70f228d044f4df9be2d7c8eb336890
   - enabled: 1
-    path: Assets/MainMenu y Minijuego1/Scenes/EndingScene.unity
+    path: Assets/MainMenu y Minijuego1/Scenes/Caja/EndingScene.unity
     guid: 4b33da15eeb5640a18d05311f5029735
   - enabled: 1
     path: Assets/MiniJuego2/MG_Nat/Assets/Scenes/GameScene.unity
@@ -30,16 +42,16 @@ EditorBuildSettings:
     path: Assets/MiniJuego2/MG_Nat/Assets/Scenes/EndScene.unity
     guid: 35aef172a35646c498d7372bf4943dea
   - enabled: 1
-    path: Assets/Minijuego3/Sprint 1 Angel/Scenes/Instructions.unity
+    path: Assets/Minijuego3/Scenes/Instructions.unity
     guid: 05d1381a857994535933ba39b6e0ea62
   - enabled: 1
-    path: Assets/Minijuego3/Sprint 1 Angel/Scenes/ListaScene.unity
+    path: Assets/Minijuego3/Scenes/ListaScene.unity
     guid: 23c522e672fed4aa496b0ba9efcd92e6
   - enabled: 1
-    path: Assets/Minijuego3/Sprint 1 Angel/Scenes/MinigameScene.unity
+    path: Assets/Minijuego3/Scenes/MinigameScene.unity
     guid: c96bbf5efab1247df8ef9326c1165239
   - enabled: 1
-    path: Assets/Minijuego3/Sprint 1 Angel/Scenes/FinalScene.unity
+    path: Assets/Minijuego3/Scenes/FinalScene.unity
     guid: dc60424bcc526462299d515109668e89
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
