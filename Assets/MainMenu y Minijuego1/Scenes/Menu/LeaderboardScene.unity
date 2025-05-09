@@ -450,7 +450,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2034943754}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: ActiveMenuPageScene
+        m_MethodName: LoadPreviousScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -557,11 +557,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e533d471a1f055c44af9964946454774, type: 3}
-    m_FontSize: 80
+    m_FontSize: 150
     m_FontStyle: 2
     m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 150
+    m_MinSize: 0
+    m_MaxSize: 200
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -647,7 +647,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Salir
+  m_Text: Regresar
 --- !u!222 &1289465668
 CanvasRenderer:
   m_ObjectHideFlags: 0

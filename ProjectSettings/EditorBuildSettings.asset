@@ -36,6 +36,15 @@ EditorBuildSettings:
     path: Assets/MainMenu y Minijuego1/Scenes/Caja/EndingScene.unity
     guid: 4b33da15eeb5640a18d05311f5029735
   - enabled: 1
+    path: Assets/MainMenu y Minijuego1/Scenes/Menu/PauseScene.unity
+    guid: e6cb1356d40984ae2ba6c908dff05559
+  - enabled: 1
+    path: Assets/MainMenu y Minijuego1/Scenes/Menu/ComputerScene.unity
+    guid: ec63a93f30e52494f9bf41a3d9cb852b
+  - enabled: 1
+    path: Assets/MainMenu y Minijuego1/Scenes/Menu/ShopScene.unity
+    guid: fd12e540bf2e84c578fabc67835868bb
+  - enabled: 1
     path: Assets/MiniJuego2/MG_Nat/Assets/Scenes/GameScene.unity
     guid: 30a41b6deabe94935b1d55f774b9bdda
   - enabled: 1

@@ -756,7 +756,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
 --- !u!114 &210381598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2169,7 +2169,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1155712035}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: ActiveMenuScene
+        m_MethodName: ActivePauseScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

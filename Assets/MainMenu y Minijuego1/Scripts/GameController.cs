@@ -5,59 +5,87 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     private void Awake(){
-        PlayerPrefs.DeleteAll();
     }
 
     private void Start(){
-        PlayerPrefs.DeleteAll();
     }
-// -------------------------------------------------------------------------------------
+
+    // Método para guardar la escena previa y cargar una nueva escena
+    public void LoadSceneWithPrevious(int sceneIndex)
+    {
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        PlayerPrefs.SetInt("previousScene" + sceneIndex, currentScene); // Guarda la escena actual como "previa"
+        SceneManager.LoadScene(sceneIndex); // Carga la nueva escena
+    }
+
+    // Método para cargar la escena previa
+    public void LoadPreviousScene()
+    {
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        int previousScene = PlayerPrefs.GetInt("previousScene" + currentScene, currentScene); // Recupera la escena previa
+        SceneManager.LoadScene(previousScene); // Carga la escena previa
+    }
+
     // Menu Principal
-    public void ActiveMenuScene(){
-        SceneManager.LoadScene("MenuScene"); 
+    public void ActiveLoginScene(){
+        LoadSceneWithPrevious(0); // Índice de LoginScene
     }
 
     public void ActiveMenuPageScene(){
-        SceneManager.LoadScene("MenuPageScene"); 
-    }
-
-    public void ActiveLoginScene(){
-        SceneManager.LoadScene("LoginScene"); 
+        LoadSceneWithPrevious(1); // Índice de MenuPageScene
     }
 
     public void ActiveSettingScene(){
-        SceneManager.LoadScene("SettingScene"); 
+        LoadSceneWithPrevious(2); // Índice de SettingScene
     }
 
     public void ActiveLeaderboardScene(){
-        SceneManager.LoadScene("LeaderboardScene"); 
+        LoadSceneWithPrevious(3); // Índice de LeaderboardScene
+    }
+
+    public void ActiveMenuScene(){
+        LoadSceneWithPrevious(4); // Índice de MenuScene
+    }
+
+    public void ActivePauseScene(){
+        LoadSceneWithPrevious(10); // Índice de PauseScene
+    }
+
+    public void ActiveComputerScene()
+    {
+        LoadSceneWithPrevious(11);  // Índice de ComputerScene
+    }
+
+    public void ActiveShopScene()
+    {
+        LoadSceneWithPrevious(12);  // Índice de ShopScene
     }
 
     // Minijuego 1: Diego -> Casher
     public void ActiveInstructionCajaScene()
     {
         PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene("InstructionCajaScene"); 
+        LoadSceneWithPrevious(5); // Índice de InstructionCajaScene
     }
 
     public void ActiveCasherScene()
     {
-        PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene("CasherScene"); 
+        LoadSceneWithPrevious(6);  // Índice de CasherScene
     }
 
     // Borrar despues del Sprint 1 (Preguntarle a Saldaña)
-     public void ActivePapasScene()
+    public void ActivePapasScene()
     {
-        SceneManager.LoadScene("PapasScene"); 
+        LoadSceneWithPrevious(7);  // Índice de PapasScene
     }
 
-     public void ActiveBookScene()
+    public void ActiveBookScene()
     {
-        SceneManager.LoadScene("BookScene"); 
+        LoadSceneWithPrevious(8);  // Índice de BookScene
     }
+
     public void ActiveCashWinScene(){ 
-        SceneManager.LoadScene("EndingScene");
+        LoadSceneWithPrevious(9); // Índice de EndingScene
     }
 
     public void CashWinScene(){
@@ -71,10 +99,9 @@ public class GameController : MonoBehaviour
     }
 
     public void ActiveCashLoseScene(){
-        SceneManager.LoadScene("EndingScene");
+        LoadSceneWithPrevious(9); // Índice de EndingScene
     }
 
-// -------------------------------------------------------------------------------------
     // Minijuego 2: Nat -> Ordenar
     public void ActiveGameScene()
     {
@@ -99,10 +126,9 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("EndScene"); 
     }
 
-// -------------------------------------------------------------------------------------
     // Borrar esto despues del SPRINT 1 (Preguntarle a Saldaña antes de hacerlo)
     // Minijuego 3: Angel -> Memoria
-     public void ActiveInstructionsScene(){
+    public void ActiveInstructionsScene(){
         SceneManager.LoadScene("Instructions"); 
     }
 }
