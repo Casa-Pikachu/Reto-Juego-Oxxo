@@ -156,6 +156,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -348,7 +361,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Teclado_0: 2203974805199666378
+      Teclado_1: 9018010807808301624
+      Teclado_2: 5055705849251739837
+      Teclado_3: -7182843048608028116
+      Teclado_4: 872378693357868485
+      Teclado_5: -4158172383877131656
+      Teclado_6: -381869257814926463
+      Teclado_7: -457727307507709735
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
