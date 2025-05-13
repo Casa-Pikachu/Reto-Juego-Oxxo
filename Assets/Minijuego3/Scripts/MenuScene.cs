@@ -19,8 +19,10 @@ public class MenuScene : MonoBehaviour
     {
         SceneManager.LoadScene("FinalScene");
     }
-    
 
+    public void StartMinigame2Scene(){
+        SceneManager.LoadScene("GameScene");
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

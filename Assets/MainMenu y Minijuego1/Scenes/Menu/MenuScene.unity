@@ -14966,7 +14966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d57398b82389345dba475317c7daede7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: GameScene
+  sceneToLoad: InstructionScene
 --- !u!61 &2125436502
 BoxCollider2D:
   m_ObjectHideFlags: 0
