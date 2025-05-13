@@ -1988,7 +1988,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1876267890}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: ActiveMenuScene
+        m_MethodName: ActivePauseScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
