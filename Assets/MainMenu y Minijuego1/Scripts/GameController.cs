@@ -85,7 +85,9 @@ public class GameController : MonoBehaviour
     }
 
     public void ActiveCashWinScene(){ 
-        LoadSceneWithPrevious(9); // Índice de EndingScene
+        //LoadSceneWithPrevious(9); // Índice de EndingScene
+        PlayerPrefs.SetInt("winlose", 1); 
+        SceneManager.LoadScene("EndingScene");
     }
 
     public void CashWinScene(){
@@ -99,7 +101,9 @@ public class GameController : MonoBehaviour
     }
 
     public void ActiveCashLoseScene(){
-        LoadSceneWithPrevious(9); // Índice de EndingScene
+        //LoadSceneWithPrevious(9); // Índice de EndingScene
+        PlayerPrefs.SetInt("winlose", 0); 
+        SceneManager.LoadScene("EndingScene");
     }
 
     // Minijuego 2: Nat -> Ordenar
