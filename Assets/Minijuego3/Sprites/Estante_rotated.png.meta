@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Estante_rotated_0: 5913196971855970479
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
