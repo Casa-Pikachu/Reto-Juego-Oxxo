@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using System.Collections;
+using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -9,7 +11,9 @@ public class Timer : MonoBehaviour
     [SerializeField] private Image uiFillImage;
     //[SerializeField] private Text uiText;
 
-    public int Duration { get; private set;}
+    // [SerializeField] private GameController gameController;
+
+    public int Duration { get; private set; }
 
     public int remainingDuration;
 
@@ -29,7 +33,7 @@ public class Timer : MonoBehaviour
     }
 
     public void Begin(){
-        StopAllCoroutines();
+        // StopAllCoroutines();
         StartCoroutine(UpdateTimer());
     }
 
@@ -39,6 +43,7 @@ public class Timer : MonoBehaviour
             remainingDuration--;
             yield return new WaitForSeconds (1f);
         }
+
         End();
     }
 
@@ -47,12 +52,14 @@ public class Timer : MonoBehaviour
         uiFillImage.fillAmount = Mathf.InverseLerp (0, Duration, seconds);
     }
 
-    public void End(){
+    public void End()
+    {
         RestTimer();
     }
 
-    private void OnDestroy(){
-        StopAllCoroutines(); 
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
     }
 
 }
