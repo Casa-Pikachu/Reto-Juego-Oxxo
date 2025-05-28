@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      refresco_0: -6652682879129300426
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
