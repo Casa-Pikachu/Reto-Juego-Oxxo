@@ -153,8 +153,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -138.56989, y: 24.8577}
-  m_SizeDelta: {x: 1044.667, y: 501.1583}
+  m_AnchoredPosition: {x: -138.56989, y: -19.0825}
+  m_SizeDelta: {x: 1044.667, y: 589.0386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &30348160
 MonoBehaviour:
@@ -178,7 +178,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3de0590760c6f9447b7e6e2c3a4de8c4, type: 3}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -190,9 +190,11 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "En este minijuego, tienes que arrastrar los objetos al esc\xE1ner para
-    registrarlos y al final, terminar la compra del cliente al picarle a la pantalla.\n\nTambi\xE9n,
-    elegir la opci\xF3n correcta si el cliente quiere una recarga, si trae un caf\xE9
-    o si los productos tienen una promoci\xF3n\n"
+    registrarlos y al final, una vez que el cliente te lo indique, finaliza la compra
+    presionando la bolsa.\n\nOcasionalmente, los clientes traer\xE1n art\xEDculos
+    o solicitudes especiales y tendr\xE1s que presionar el bot\xF3n correspondiente.\n\nRecibir\xE1s
+    puntos al ateneder correctamente a los clientes, \xA1pero ten cuidado!, tus errores
+    te costar\xE1n puntos."
 --- !u!222 &30348161
 CanvasRenderer:
   m_ObjectHideFlags: 0
