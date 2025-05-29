@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class Usuarios
 {
     public int id_usuario {get;set;}

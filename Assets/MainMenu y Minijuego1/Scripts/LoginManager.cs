@@ -10,7 +10,7 @@ public class LoginManager : MonoBehaviour
     public Button loginButton;
     public Text feedbackText; // para mostrar mensajes al usuario
 
-    private string baseURL = "https://localhost:7139/Users/CheckUsrPass"; // Cambia el puerto si usas otro
+    private string baseURL = "https://10.22.238.41:7149/Usuarios/CheckUsrPass"; // Cambia el puerto si usas otro
 
     void Start()
     {
@@ -35,6 +35,7 @@ public class LoginManager : MonoBehaviour
     {
         string url = $"{baseURL}/{email}/{password}";
         UnityWebRequest request = UnityWebRequest.Get(url);
+        request.certificateHandler = new ForceAcceptAll();
 
         yield return request.SendWebRequest();
 
@@ -45,9 +46,9 @@ public class LoginManager : MonoBehaviour
 
             if (!string.IsNullOrEmpty(user.correo))
             {
-                
+
                 FindFirstObjectByType<GameController>().ActiveMenuPageScene();
-                
+
             }
             else
             {
@@ -61,6 +62,7 @@ public class LoginManager : MonoBehaviour
         }
     }
 
+    
     [System.Serializable]
     public class Usuarios
     {
