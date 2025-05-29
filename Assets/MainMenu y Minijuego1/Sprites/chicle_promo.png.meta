@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      chicle_promo_0: 3418216645321150027
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

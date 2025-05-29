@@ -93,11 +93,12 @@ MonoBehaviour:
   - {fileID: 6412265040393337715, guid: 3a25938a5b3881c4ebdf73789c5ba9f2, type: 3}
   - {fileID: 6412265040393337715, guid: e763b383b4be72a4dafdde8b4c67bc09, type: 3}
   - {fileID: 6412265040393337715, guid: d8e5d89c3babb954bb9fbaad214d8e31, type: 3}
+  - {fileID: 6412265040393337715, guid: 9820fae54607cc14ea43a4345728fb23, type: 3}
   startField: {fileID: 0}
   clientID: Client_4
   generatedItemsCount: 0
   numRecargas: 0
-  maxItems: 5
+  maxItems: 7
   clientDialogue: {fileID: 0}
   productoText: {fileID: 0}
   precioText: {fileID: 0}

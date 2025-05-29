@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pato_promo_0: 7376892341323246355
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

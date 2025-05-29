@@ -11,28 +11,28 @@ public class CashierSFX : MonoBehaviour
 
     public void PlayScanner()
     {
-        Debug.Log("Scanner");
+        // Debug.Log("Scanner");
         audioSource.clip = scanner;
         audioSource.Play();
     }
 
     public void PlayCompletarCompra()
     {
-        Debug.Log("Completar Compra");
+        // Debug.Log("Completar Compra");
         audioSource.clip = completarCompra;
         audioSource.Play();
     }
 
     public void PlayError()
     {
-        Debug.Log("Error");
+        // Debug.Log("Error");
         audioSource.clip = error;
         audioSource.Play();
     }
     
     public void PlayCorrecto()
     {
-        Debug.Log("Correcto");
+        // Debug.Log("Correcto");
         audioSource.clip = correcto;
         audioSource.Play();
     }
