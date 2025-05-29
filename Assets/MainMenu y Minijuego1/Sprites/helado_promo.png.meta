@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      helado_promo_0: -55232714928398736
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

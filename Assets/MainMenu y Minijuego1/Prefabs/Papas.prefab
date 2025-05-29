@@ -90,6 +90,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemImage: {fileID: 5603170486191890143}
   itemName: Papas
-  itemPrice: 20
+  itemPrice: 0
   itemPuntos: 20
   parentAfterDrag: {fileID: 0}

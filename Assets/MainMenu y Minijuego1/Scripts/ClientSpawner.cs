@@ -40,8 +40,6 @@ public class ClientSpawner : MonoBehaviour
 
             if(PlayerPrefs.GetString("LastClientPrefab") == selectedPrefab.GetComponent<Client>().clientID)
             {
-                Debug.Log("El cliente seleccionado es el mismo que el último, volviendo a seleccionar otro.");
-                // Si el cliente seleccionado es el mismo que el último, vuelve a seleccionar otro
                 SpanwRandomClient();
                 return;
             }
