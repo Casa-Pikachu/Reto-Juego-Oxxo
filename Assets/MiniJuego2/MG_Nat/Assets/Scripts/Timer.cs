@@ -21,7 +21,8 @@ public class Timer : MonoBehaviour
         RestTimer();
     }
 
-    private void RestTimer(){
+    private void RestTimer()
+    {
         //uiText.text = "00:00";
         uiFillImage.fillAmount = 0f;
         Duration = remainingDuration = 0;
@@ -32,16 +33,19 @@ public class Timer : MonoBehaviour
         return this;
     }
 
-    public void Begin(){
+    public void Begin()
+    {
         // StopAllCoroutines();
         StartCoroutine(UpdateTimer());
+        PlayerPrefs.SetInt("Time", Duration);
     }
 
     private IEnumerator UpdateTimer (){
         while (remainingDuration > 0){
             UpdateUI(remainingDuration);
             remainingDuration--;
-            yield return new WaitForSeconds (1f);
+            PlayerPrefs.SetInt("Time", remainingDuration);
+            yield return new WaitForSeconds(1f);
         }
 
         End();
@@ -61,5 +65,4 @@ public class Timer : MonoBehaviour
     {
         StopAllCoroutines();
     }
-
 }

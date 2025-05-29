@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
 {
-    public Text winLoseText;
+    // public Text winLoseText;
     public Text PuntajeText;
     public Text ExpText;
 
@@ -15,23 +15,17 @@ public class GameOver : MonoBehaviour
 
     public void StartToplay(){
         PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene("GameScene"); 
+        SceneManager.LoadScene("GameScene");
     }
 
     public void ExitGame(){
         SceneManager.LoadScene("MenuScene");
     }
 
-    void Start(){
-        if(PlayerPrefs.GetInt("winlose", 1) == 1){
-            winLoseText.text = "¡Nivel Completado!";
-            PuntajeText.text = "+ 1500";
-            ExpText.text = "+ 100";
-        }
-        else{
-            winLoseText.text = "Fin del juego";
-            PuntajeText.text = "0";
-            ExpText.text = "0";
-        }
+    void Start()
+    {
+        // winLoseText.text = "¡Nivel Completado!";
+        PuntajeText.text = PlayerPrefs.GetInt("Puntos").ToString();
+        ExpText.text = "+ 100";
     }
 }

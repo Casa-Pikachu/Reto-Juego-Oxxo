@@ -11,7 +11,7 @@ public class GetHighScore : MonoBehaviour
     {
         string mediaUrl = "https://10.22.238.41:7149/Ranking/GetFirst";
         Ranking ranking = GetRanking(mediaUrl);
-        
+
         if (ranking != null)
         {
             highScoreText.text = ranking.puntaje.ToString();
@@ -20,6 +20,16 @@ public class GetHighScore : MonoBehaviour
         else
         {
             highScoreText.text = "----";
+        }
+    }
+
+    [System.Obsolete]
+    void Update()
+    {
+        if (PlayerPrefs.GetInt("Time") <= 0)
+        {
+            string mediaURL = "https://10.22.238.41:7149/Ranking/PostRanking";
+            PostRanking(mediaURL);
         }
     }
 
@@ -41,4 +51,26 @@ public class GetHighScore : MonoBehaviour
         Ranking ranking = JsonConvert.DeserializeObject<Ranking>(jsonResponse);
         return ranking;
     }
+
+    [System.Obsolete]
+    void PostRanking(string mediaURL)
+    {
+
+        Ranking ranking = new Ranking
+        {
+            puntaje = PlayerPrefs.GetInt("Puntos"),
+            fecha_puntaje = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+            id_usuario = 1, // PlayerPrefs.GetInt("IdUsuario")
+            id_minijuego = 1
+        };
+
+        string jsonData = JsonConvert.SerializeObject(ranking);
+        UnityWebRequest request = UnityWebRequest.Post(mediaURL, jsonData);
+        request.certificateHandler = new ForceAcceptAll();
+        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonData);
+        request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        request.SetRequestHeader("Content-Type", "application/json");
+        request.SendWebRequest();
+    }
+    
 }

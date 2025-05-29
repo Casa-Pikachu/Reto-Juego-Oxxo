@@ -127,7 +127,7 @@ public class GameController : MonoBehaviour
     }
 
     public void ActiveLoseScene(){
-        SceneManager.LoadScene("EndScene"); 
+        SceneManager.LoadScene("EndScene");
     }
 
     // Borrar esto despues del SPRINT 1 (Preguntarle a Saldaña antes de hacerlo)
