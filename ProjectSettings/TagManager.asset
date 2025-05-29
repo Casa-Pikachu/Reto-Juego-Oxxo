@@ -3,7 +3,24 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Circle
+  - Agua
+  - Papas_C
+  - Can
+  - Cereal_N
+  - Cereal_A
+  - Galletas
+  - Harina
+  - Papa_A
+  - Papas_N
+  - Papas_A
+  - Papas_V
+  - Soda_V
+  - Soda_Az
+  - Soda_R
+  - Tuna
+  - Soda_A
   layers:
   - Default
   - TransparentFX
