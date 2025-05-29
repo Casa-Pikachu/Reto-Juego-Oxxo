@@ -2,6 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EndField : MonoBehaviour, IDropHandler
 {
@@ -197,6 +198,14 @@ public class EndField : MonoBehaviour, IDropHandler
                 PlayerPrefs.SetInt("Puntos", PlayerPrefs.GetInt("Puntos") - 50);
                 UpdatePuntos();
             }
+        }
+    }
+
+    public void Update()
+    {
+        if(PlayerPrefs.GetInt("Time") <= 0)
+        {
+            SceneManager.LoadScene("EndingScene");
         }
     }
 }
