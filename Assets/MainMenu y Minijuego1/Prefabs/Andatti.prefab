@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8566440565388427306}
   - component: {fileID: 1202818450304700197}
   m_Layer: 0
-  m_Name: Cafe
+  m_Name: Andatti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,8 +51,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 1202818450304700197}
-  itemName: "Caf\xE9"
-  itemPrice: 30
+  itemName: Andatti
+  itemPrice: 0
   itemPuntos: 30
   parentAfterDrag: {fileID: 0}
 --- !u!222 &8566440565388427306

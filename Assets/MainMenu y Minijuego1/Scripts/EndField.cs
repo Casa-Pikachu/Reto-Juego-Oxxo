@@ -74,8 +74,6 @@ public class EndField : MonoBehaviour, IDropHandler
             GameObject client = GameObject.FindGameObjectWithTag("Client");
             PlayerPrefs.SetString("LastClientPrefab", client.GetComponent<Client>().clientID);
 
-            Debug.Log("Order finished, destroying client prefab: " + PlayerPrefs.GetString("LastClientPrefab"));
-
             if (client != null)
             {
                 Destroy(client);
@@ -110,7 +108,7 @@ public class EndField : MonoBehaviour, IDropHandler
     {
         if (PlayerPrefs.GetString("CurrentItem") == "Recarga")
         {
-            PlayerPrefs.SetInt("Puntos", PlayerPrefs.GetInt("Puntos") + 50);
+            PlayerPrefs.SetInt("Puntos", PlayerPrefs.GetInt("Puntos") + 30);
             UpdatePuntos();
             clientDialogue.text = "¡Gracias por mi recarga!";
             cashierSFX.PlayCorrecto();
@@ -143,16 +141,16 @@ public class EndField : MonoBehaviour, IDropHandler
 
     public void BotonAndatti()
     {
-        if (PlayerPrefs.GetString("CurrentItem") == "Café" && PlayerPrefs.GetInt("EspecialApplied") == 0)
+        if (PlayerPrefs.GetString("CurrentItem") == "Andatti" && PlayerPrefs.GetInt("EspecialApplied") == 0)
         {
             PlayerPrefs.SetInt("EspecialApplied", 1);
-            PlayerPrefs.SetInt("Puntos", PlayerPrefs.GetInt("Puntos") + 100);
+            PlayerPrefs.SetInt("Puntos", PlayerPrefs.GetInt("Puntos") + 30);
             UpdatePuntos();
             clientDialogue.text = "¡Gracias por mi Andatti!";
             cashierSFX.PlayCorrecto();
         }
 
-        else if (PlayerPrefs.GetString("CurrentItem") == "Café" && PlayerPrefs.GetInt("EspecialApplied") == 1)
+        else if (PlayerPrefs.GetString("CurrentItem") == "Andatti" && PlayerPrefs.GetInt("EspecialApplied") == 1)
         {
             clientDialogue.text = "¡Ya has aplicado la promoción!";
             cashierSFX.PlayError();
@@ -176,7 +174,7 @@ public class EndField : MonoBehaviour, IDropHandler
         if (PlayerPrefs.GetString("CurrentItem").StartsWith("Promo") && PlayerPrefs.GetInt("EspecialApplied") == 0)
         {
             PlayerPrefs.SetInt("EspecialApplied", 1);
-            PlayerPrefs.SetInt("Puntos", PlayerPrefs.GetInt("Puntos") + 150);
+            PlayerPrefs.SetInt("Puntos", PlayerPrefs.GetInt("Puntos") + 30);
             UpdatePuntos();
             clientDialogue.text = "¡Gracias por aplicar la promoción!";
             cashierSFX.PlayCorrecto();

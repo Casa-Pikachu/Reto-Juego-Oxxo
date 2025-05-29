@@ -96,7 +96,7 @@ MonoBehaviour:
   clientID: Client_1
   generatedItemsCount: 0
   numRecargas: 0
-  maxItems: 5
+  maxItems: 3
   clientDialogue: {fileID: 0}
   productoText: {fileID: 0}
   precioText: {fileID: 0}

@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Newtonsoft.Json;
+using UnityEngine.Networking;
 
 public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -10,24 +12,48 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public int itemPuntos;
     [HideInInspector] public Transform parentAfterDrag;
 
+    private void Start()
+    {
+        string mediaUrl = "https://10.22.238.41:7149/Precios/GetPrecio/";
+
+        itemPrice = GetPrecio(mediaUrl, itemName).precio_articulo;
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("Begin drag");
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
         transform.SetAsLastSibling();
         itemImage.raycastTarget = false;
     }
 
-    public void OnDrag(PointerEventData eventData) {
-        Debug.Log("Dragging");
+    public void OnDrag(PointerEventData eventData)
+    {
         transform.position = Input.mousePosition;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("End drag");
         transform.SetParent(parentAfterDrag);
         itemImage.raycastTarget = true;
+    }
+
+    public static Precios GetPrecio(string mediaUrl, string nombre_articulo)
+    {
+        UnityWebRequest request = UnityWebRequest.Get(mediaUrl + nombre_articulo);
+        request.certificateHandler = new ForceAcceptAll();
+        request.SendWebRequest();
+
+        while (!request.isDone) { }
+
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+        {
+            Debug.LogError("Error: " + request.error);
+            return null;
+        }
+
+        string jsonResponse = request.downloadHandler.text;
+        Precios precio = JsonConvert.DeserializeObject<Precios>(jsonResponse);
+        return precio;
     }
 }

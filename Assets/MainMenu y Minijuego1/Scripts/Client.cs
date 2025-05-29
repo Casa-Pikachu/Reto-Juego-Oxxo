@@ -47,8 +47,6 @@ public class Client : MonoBehaviour
     {
         if (itemPrefabs != null && itemPrefabs.Count > 0 && startField != null)
         {
-            // Selecciona un prefab aleatorio de la lista
-
             if (numRecargas == 1)
             {
                 itemPrefabs.RemoveAll(item => item.name == "Recarga");
@@ -67,7 +65,7 @@ public class Client : MonoBehaviour
             newItem.transform.SetParent(startField);
 
             PlayerPrefs.SetString("CurrentItem", newItem.GetComponent<DraggableItem>().itemName);
-            Debug.Log($"Current item: {PlayerPrefs.GetString("CurrentItem")}");
+            // Debug.Log($"Current item: {PlayerPrefs.GetString("CurrentItem")}");
         }
     }
 

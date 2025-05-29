@@ -52,7 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemImage: {fileID: 1202818450304700197}
   itemName: PromoHelado
-  itemPrice: 35
+  itemPrice: 0
   itemPuntos: 35
   parentAfterDrag: {fileID: 0}
 --- !u!222 &8566440565388427306
