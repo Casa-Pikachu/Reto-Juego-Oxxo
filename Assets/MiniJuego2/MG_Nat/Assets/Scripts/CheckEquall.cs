@@ -11,7 +11,8 @@ public class CheckEquall : MonoBehaviour, IDropHandler
   public GameObject obj1;
   public GameObject obj2;
   public GameObject obj3;
-  public GameManager Manager; 
+  public GameManager Manager;
+  public UIController UIController;
 
   bool sameTag = false;
   bool sameTag1 = false;
@@ -20,6 +21,7 @@ public class CheckEquall : MonoBehaviour, IDropHandler
   public void Start()
   {
     PlayerPrefs.SetInt("cantidad", 0);
+    PlayerPrefs.SetInt("puntaje", 0); 
   }
 
   public void OnDrop(PointerEventData eventData)
@@ -73,12 +75,13 @@ public class CheckEquall : MonoBehaviour, IDropHandler
 
         Manager.UpdateEstantes();
         Manager.checkEstantes();
+        UIController.AddPoints(30);  
 
         Debug.Log($"{PlayerPrefs.GetInt("cantidad")}");
       }
       else
       {
-
+        UIController.SubPoints(5); 
         for (int i = estante.childCount - 1; i >= 0; i--)
         {
           Debug.Log($"{estante.childCount}");
@@ -100,17 +103,9 @@ public class CheckEquall : MonoBehaviour, IDropHandler
           sameTag2 = false;
           Debug.Log($"3 {sameTag2}");
         }
-
       }
 
     }
-    else
-    {
-      Debug.LogWarning("Not enough children in estante!");
-
-    }
-      //PlayerPrefs.SetInt("estante", 1);
-      Debug.Log($"Fucking validated  {estante.childCount}");
 
     }
   

@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
 
     public void endScene()
     {
+        PlayerPrefs.SetInt("Tiempo", 0);
         SceneManager.LoadScene("EndScene");
     }
 

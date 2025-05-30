@@ -5,37 +5,66 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 public class MayorPuntaje : MonoBehaviour
 {
-    public string puntaje;
+
+    public Text puntajeText;
+
+    public void Start()
+    {
+        string linkGet = "https://192.168.68.111:7149/Ranking/Primero";
+        Ranking newRank = GetPrimero(linkGet);
+
+        puntajeText.text = newRank.puntaje.ToString();
+    }
+
+    public void Update()
+    {
+        if (PlayerPrefs.GetInt("Tiempo") == 0)
+        {
+            string linkPost = "https://192.168.68.111:7149/Ranking/PostRanking";
+            PostPrimero(linkPost);
+            PlayerPrefs.SetInt("Tiempo", 1); 
+        }
+    }
+
 
     Ranking GetPrimero(string puntaje)
     {
-        Ranking newRank = new Ranking();
-        string JSONurl = "https://10.22.222.92:7149/Ranking/Primero";
-        UnityWebRequest web = UnityWebRequest.Get(JSONurl);
-        web.certificateHandler = new ForceAcceptAll();
+        UnityWebRequest request = UnityWebRequest.Get(puntaje);
+        request.certificateHandler = new ForceAcceptAll();
+        request.SendWebRequest();
 
-        if (web.result != UnityWebRequest.Result.Success)
+        while (!request.isDone) { }
+
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
         {
-            UnityEngine.Debug.Log("Error API" + web.error);
-        }
-        else
-        {
-            string primero = web.downloadHandler.text;
-            newRank = JsonConvert.DeserializeObject<Ranking>(primero);
+            Debug.LogError("Error: " + request.error);
+            return null;
         }
 
-        return newRank;
+        string jsonResponse = request.downloadHandler.text;
+        Ranking ranking = JsonConvert.DeserializeObject<Ranking>(jsonResponse);
+        return ranking;
     }
-        
+
     void PostPrimero(string mediaURL)
     {
         Ranking ranking = new Ranking
         {
-            puntaje = PlayerPrefs.GetInt("Puntos"),
+            puntaje = PlayerPrefs.GetInt("puntos"),
             fecha_puntaje = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
             id_usuario = 1,
+            //id_usuario = PlayerPrefs.GetInt("IdUsuario"),
             id_minijuego = 2
         };
 
+        string jsonData = JsonConvert.SerializeObject(ranking);
+        UnityWebRequest request = new UnityWebRequest(mediaURL, "POST");
+        request.certificateHandler = new ForceAcceptAll();
+
+        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonData);
+        request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        request.downloadHandler = new DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
+        request.SendWebRequest();
     }
 }
