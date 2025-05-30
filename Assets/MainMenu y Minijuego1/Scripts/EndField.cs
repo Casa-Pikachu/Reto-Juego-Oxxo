@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Newtonsoft.Json;
+using UnityEngine.Networking;
 
 public class EndField : MonoBehaviour, IDropHandler
 {
@@ -201,9 +203,69 @@ public class EndField : MonoBehaviour, IDropHandler
 
     public void Update()
     {
-        if(PlayerPrefs.GetInt("Time") <= 0)
+        if (PlayerPrefs.GetInt("Time") <= 0)
         {
+            string postURL = "https://10.22.238.41:7149/Ranking/PostRanking";
+            string puntosURL = "https://10.22.238.41:7149/Usuarios/UpdatePuntos";
+            string expURL = "https://10.22.238.41:7149/Usuarios/UpdateExperiencia";
+
+            int newPuntaje = PlayerPrefs.GetInt("Puntos") + PlayerPrefs.GetInt("PuntosUsuario");
+            int newEXP = PlayerPrefs.GetInt("ExperienciaUsuario") + (newPuntaje / 10);
+
+            PlayerPrefs.SetInt("ExperienciaUsuario", newEXP);
+            PlayerPrefs.SetInt("PuntosUsuario", newPuntaje);
+
+            PostRankingMini1(postURL);
+            UpdatePuntosDB(puntosURL);
+            UpdateExperienciaDB(expURL);
             SceneManager.LoadScene("EndingScene");
         }
+    }
+
+    void PostRankingMini1(string mediaURL)
+    {
+        Ranking ranking = new Ranking
+        {
+            puntaje = PlayerPrefs.GetInt("Puntos"),
+            fecha_puntaje = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+            id_usuario = PlayerPrefs.GetInt("IdUsuario"),
+            id_minijuego = 1
+        };
+
+        string jsonData = JsonConvert.SerializeObject(ranking);
+        UnityWebRequest request = new UnityWebRequest(mediaURL, "POST");
+        request.certificateHandler = new ForceAcceptAll();
+
+        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonData);
+        request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        request.downloadHandler = new DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
+        request.SendWebRequest();
+    }
+
+    void UpdatePuntosDB(string mediaURL)
+    {
+        int puntos = PlayerPrefs.GetInt("PuntosUsuario");
+        int id = PlayerPrefs.GetInt("IdUsuario");
+
+        string url = $"{mediaURL}/{id}/{puntos}";
+
+        UnityWebRequest request = UnityWebRequest.Put(url, "");
+        request.certificateHandler = new ForceAcceptAll();
+
+        request.SendWebRequest();
+    }
+
+    void UpdateExperienciaDB(string mediaURL)
+    {
+        int experiencia = PlayerPrefs.GetInt("ExperienciaUsuario");
+        int id = PlayerPrefs.GetInt("IdUsuario");
+
+        string url = $"{mediaURL}/{id}/{experiencia}";
+
+        UnityWebRequest request = UnityWebRequest.Put(url, "");
+        request.certificateHandler = new ForceAcceptAll();
+
+        request.SendWebRequest();
     }
 }
