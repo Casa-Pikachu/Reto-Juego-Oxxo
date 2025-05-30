@@ -10,24 +10,26 @@ public class MayorPuntaje : MonoBehaviour
 
     public void Start()
     {
-        string linkGet = "https://192.168.1.102:7149/Ranking/Primero";
-        Ranking newRank = GetPrimero(linkGet);
+        string linkGet = "https://10.22.222.92:7149/Ranking/GetPrimero";
+        RankingMini2 newRank = GetPrimero(linkGet);
 
         puntajeText.text = newRank.puntaje.ToString();
     }
 
     public void Update()
     {
+        
+
         if (PlayerPrefs.GetInt("Tiempo") == 0)
         {
-            string linkPost = "https://192.168.1.102:7149/Ranking/PostRanking";
-            PostPrimero(linkPost);
-            PlayerPrefs.SetInt("Tiempo", 1); 
+            string linkPost = "https://10.22.222.92:7149/Ranking/PostRanking";                PostPrimero(linkPost);
+            PlayerPrefs.SetInt("Tiempo", 1);
         }
+
     }
 
 
-    Ranking GetPrimero(string puntaje)
+    RankingMini2 GetPrimero(string puntaje)
     {
         UnityWebRequest request = UnityWebRequest.Get(puntaje);
         request.certificateHandler = new ForceAcceptAll();
@@ -42,13 +44,13 @@ public class MayorPuntaje : MonoBehaviour
         }
 
         string jsonResponse = request.downloadHandler.text;
-        Ranking ranking = JsonConvert.DeserializeObject<Ranking>(jsonResponse);
+        RankingMini2 ranking = JsonConvert.DeserializeObject<RankingMini2>(jsonResponse);
         return ranking;
     }
 
     void PostPrimero(string mediaURL)
     {
-        Ranking ranking = new Ranking
+        RankingMini2 ranking = new RankingMini2
         {
             puntaje = PlayerPrefs.GetInt("puntos"),
             fecha_puntaje = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),

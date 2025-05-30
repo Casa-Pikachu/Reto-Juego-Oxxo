@@ -3,19 +3,24 @@ using UnityEngine;
 public class SFXEstantes : MonoBehaviour
 {
 
-    public AudioClip fin;
+    public AudioClip estante;
     public AudioClip drop;
+    public AudioClip borrar;
 
-    public void end()
+    public void bien()
     {
-        //Igualmente reproduce el sonido pero de la escena final
-        AudioSource.PlayClipAtPoint(fin, Camera.main.transform.position, 0.5f); //Bajamos el volumen 
+        AudioSource.PlayClipAtPoint(estante, Camera.main.transform.position, 0.5f); //Bajamos el volumen 
+    }
+
+    public void tirar()
+    {
+        AudioSource.PlayClipAtPoint(drop, Camera.main.transform.position, 0.5f); //Bajamos el volumen 
     }
     
-        public void tirar()
+
+    public void mal()
     {
-        //Igualmente reproduce el sonido pero de la escena final
-        AudioSource.PlayClipAtPoint(drop,Camera.main.transform.position, 0.5f); //Bajamos el volumen 
+        AudioSource.PlayClipAtPoint(borrar,Camera.main.transform.position, 0.5f); //Bajamos el volumen 
     }
 
     
