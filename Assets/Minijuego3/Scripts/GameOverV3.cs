@@ -5,8 +5,9 @@ using UnityEngine.UI;
 public class GameOverV3 : MonoBehaviour
 {
     public Text winLoseText;
-    public Text puntajeText; 
-    
+    public Text puntajeText;
+    public Text xpText;
+
 
     public Text starText;
 
@@ -21,7 +22,10 @@ public class GameOverV3 : MonoBehaviour
 
         int cantObj = PlayerPrefs.GetInt("o", 0);
         starText.text = cantObj.ToString();
-       
+
+        int xp = PlayerPrefs.GetInt("x", 0);
+        xpText.text = xp.ToString();
+
 
         if (score >= 300)
         {
@@ -33,13 +37,18 @@ public class GameOverV3 : MonoBehaviour
 
         }
 
-       
+
     }
 
     public void StartToplay()
     {
         SceneManager.LoadScene("GameScene");
     }
+    
+
+
+
+    
 
     
 }

@@ -9,15 +9,15 @@ public class dragableItemV3 : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 //script hecho con tutorial 
 {
     public Image image;
-    [HideInInspector] public Transform parentAfterDrag; //guardar el padre oirginal 
+    [HideInInspector] public Transform parentAfterDrag; 
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("Begin drag");
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
-        transform.SetAsLastSibling(); //para que se vaya al frente
-        image.raycastTarget = false; //no detecte que hya un objeto en el slot 
+        transform.SetAsLastSibling(); 
+        image.raycastTarget = false; 
       
 
     }
@@ -25,7 +25,7 @@ public class dragableItemV3 : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     public void OnDrag(PointerEventData eventData)
     {
         Debug.Log("Dragging");
-        transform.position = Input.mousePosition; //para que si lo arrastre el mouse 
+        transform.position = Input.mousePosition; 
     }
 
    
@@ -35,7 +35,6 @@ public class dragableItemV3 : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 {
     Debug.Log("End drag");
 
-    // Verifica si lo soltaste sobre un slot válido
     if (eventData.pointerEnter != null)
     {
         InventorySlotV3 slot = eventData.pointerEnter.GetComponent<InventorySlotV3>();
@@ -47,18 +46,18 @@ public class dragableItemV3 : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         }
     }
 
-    // Si no fue sobre un slot válido, vuelve al padre original
+   
     transform.SetParent(parentAfterDrag);
     image.raycastTarget = true;
 }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         

@@ -8,6 +8,8 @@ public class ListaVerificacionFinal : MonoBehaviour
     public List<string> productosColocados = new List<string>();
     public int puntaje;
     public int cantObjetos;
+
+    public int experiencia;
     
     public void Verificar()
     {
@@ -37,6 +39,7 @@ public class ListaVerificacionFinal : MonoBehaviour
                 Debug.Log("Correcto: " + nombre);
                 puntaje = puntaje + 50;
                 cantObjetos = cantObjetos + 1;
+                experiencia = experiencia + (cantObjetos * 5);
             }
             else
             {
@@ -47,6 +50,8 @@ public class ListaVerificacionFinal : MonoBehaviour
             PlayerPrefs.SetInt("+", puntaje);
             Debug.Log("cantObjetos: " + cantObjetos);
             PlayerPrefs.SetInt("o", cantObjetos);
+            Debug.Log("exp: " + experiencia);
+            PlayerPrefs.SetInt("x", experiencia);
         }
 
     }

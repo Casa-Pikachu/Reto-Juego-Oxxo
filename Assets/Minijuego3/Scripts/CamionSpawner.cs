@@ -33,11 +33,11 @@ public class CamionSpawner : MonoBehaviour
      
         for (int i = 0; i < nombresAMostrar.Count; i++)
         {
-            //suelta productos random 
+            
             Producto p = productosDisponibles.Find(prod => prod.nombre == nombresAMostrar[i]);
             if (p == null) continue;
 
-            //contenedor
+            
             GameObject nuevo = Instantiate(p.prefab, contenedorCanvas);
             nuevo.name = p.nombre;
 
