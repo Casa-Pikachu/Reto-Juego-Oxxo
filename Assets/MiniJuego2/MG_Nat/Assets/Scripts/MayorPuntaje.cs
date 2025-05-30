@@ -10,7 +10,7 @@ public class MayorPuntaje : MonoBehaviour
 
     public void Start()
     {
-        string linkGet = "https://192.168.1.102:7149/Ranking/Primero";
+        string linkGet = "https://10.22.238.41:7149/Ranking/Primero";
         Ranking newRank = GetPrimero(linkGet);
 
         puntajeText.text = newRank.puntaje.ToString();
@@ -20,7 +20,7 @@ public class MayorPuntaje : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("Tiempo") == 0)
         {
-            string linkPost = "https://192.168.1.102:7149/Ranking/PostRanking";
+            string linkPost = "https://10.22.238.41:7149/Ranking/PostRanking";
             PostPrimero(linkPost);
             PlayerPrefs.SetInt("Tiempo", 1); 
         }
