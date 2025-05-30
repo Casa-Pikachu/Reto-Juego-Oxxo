@@ -36,7 +36,7 @@ public class CheckEquall : MonoBehaviour, IDropHandler
 
 
     if (item.tag == obj2.tag)
-    {
+    { 
       sameTag1 = true;
       Debug.Log("It fucking is 2");
     }
