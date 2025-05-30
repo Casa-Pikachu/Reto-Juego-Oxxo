@@ -1075,7 +1075,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8a16cdeb1d69d4e508160d1eed16059b, type: 3}
-    m_FontSize: 60
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1086,7 +1086,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Instrucciones
+  m_Text: "Arrastra los art\xEDculos de la parte inferior de la pantalla a los estantes
+    de acuerdo a la lista en el portapapeles.\n\nTienes 45 segundos para ordenar
+    los 6 estantes. "
 --- !u!222 &715533942
 CanvasRenderer:
   m_ObjectHideFlags: 0

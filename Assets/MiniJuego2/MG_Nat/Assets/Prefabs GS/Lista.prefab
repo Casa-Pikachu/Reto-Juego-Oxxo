@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5346879210269268321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2838700365516554175}
+  - component: {fileID: 7779571766787249411}
+  m_Layer: 0
+  m_Name: Lista
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2838700365516554175
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5346879210269268321}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -638, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7779571766787249411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5346879210269268321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e9b4828a98734c98a40c8d0b86a99e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listObj:
+  - {fileID: 8987225974007930790, guid: bb84653ab376e487ca476ad7f6498380, type: 3}
+  - {fileID: 81381784902675920, guid: 8fd83dc7a6232460c966bfc137fc5a45, type: 3}
+  - {fileID: 7569151196111091535, guid: 96b2b6e9178f04b99a22c763cc4ca8cb, type: 3}
+  - {fileID: 6554052465976810394, guid: 8fb84fd1422914240a686810a5e2c0a9, type: 3}
+  - {fileID: 818649267648448209, guid: d66cb85bd76ff4ecc99481114a0ba179, type: 3}
+  - {fileID: 524286842051304695, guid: a759feda9b37a441eb8b3c53d71afb72, type: 3}
+  - {fileID: 1930768466464264220, guid: aee5e6052ba7b4c7592c81b2bda32993, type: 3}
+  - {fileID: 5107430534357072660, guid: 3376c52cbad164477988eac05509955b, type: 3}
+  - {fileID: 447399687190011055, guid: 4dae7a5e1fa2e426dbc955be71cba687, type: 3}
+  - {fileID: 4448137008818857229, guid: 182a5603329c249dea06d1efcefee0e6, type: 3}
+  - {fileID: 6633273269327903550, guid: cc3bb2e60dc384d85945146fd2457fa2, type: 3}
+  - {fileID: 1368222482858500766, guid: 1a7c300c0149a449fb9e010ff4c76db2, type: 3}
+  - {fileID: 2230192104519865654, guid: 05f68efff847647bfa50125ac52b3c1c, type: 3}
+  - {fileID: 9043752285023178059, guid: 52b2085383c91419bbadc6f9b975bed9, type: 3}
+  - {fileID: 8879261363110309159, guid: 043d84ce8aeb54af3aa9108f76bfb70a, type: 3}
+  - {fileID: 7902780099707642270, guid: dd5fb5140fe73458fa79f6eea5cf1620, type: 3}
+  randParent: {fileID: 0}
