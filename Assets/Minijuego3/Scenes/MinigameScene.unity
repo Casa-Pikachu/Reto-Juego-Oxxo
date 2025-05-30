@@ -2322,11 +2322,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1076544262}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7578b49ca8949ab4b874e04976beaef6, type: 3}
+  m_Script: {fileID: 11500000, guid: a152546a050d66d49bab92d43893f446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 1441687330}
-  duracionEnSegundos: 30
+  timer1: {fileID: 1441687330}
+  duration: 10
 --- !u!1 &1157739568
 GameObject:
   m_ObjectHideFlags: 0
@@ -3085,13 +3085,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1441687329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6b2509722306f44fb6add1417671c95, type: 3}
+  m_Script: {fileID: 11500000, guid: 64c6b931a1eac3845ba7038c8836367f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   uiFillImage: {fileID: 1713502373}
-  <Duration>k__BackingField: 0
-  remainingDuration: 30
-  <HaTerminado>k__BackingField: 0
+  remainingDuration: 10
 --- !u!114 &1441687331
 MonoBehaviour:
   m_ObjectHideFlags: 0
