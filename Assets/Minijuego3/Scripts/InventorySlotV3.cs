@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 //hecho con tutorial 
 public class InventorySlotV3 : MonoBehaviour, IDropHandler
 {
-    public SFXManager sound;
+
     public void OnDrop(PointerEventData eventData)
     {
         if (transform.childCount == 0)

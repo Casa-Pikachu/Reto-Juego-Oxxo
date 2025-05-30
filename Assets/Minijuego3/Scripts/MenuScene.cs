@@ -17,19 +17,30 @@ public class MenuScene : MonoBehaviour
 
 
     public Timer timer;
-   // private bool escenaCargada = false;
+
+
 
     void Update()
     {
-       /* if (!escenaCargada && timer != null && timer.HaTerminado)
+        if (timer != null)
         {
-            escenaCargada = true;
-            //Debug.Log("Se acabo el tiempo");
-            int siguiente = SceneManager.GetActiveScene().buildIndex + 1;
-            SceneManager.LoadScene(siguiente);
-        }*/
+
+
+            if (timer.remainingDuration <= 0)
+            {
+                Debug.Log("Se acabo el tiempo");
+                int siguiente = SceneManager.GetActiveScene().buildIndex + 1;
+                SceneManager.LoadScene(siguiente);
+            }
+        }
+         
 
     }
+
+
+    public ListaVerificacionFinal puntaje;
+
+    
 
 
 

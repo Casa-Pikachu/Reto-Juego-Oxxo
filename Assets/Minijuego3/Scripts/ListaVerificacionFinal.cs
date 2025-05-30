@@ -7,6 +7,8 @@ public class ListaVerificacionFinal : MonoBehaviour
     public Transform contenedorSlots;
     public List<string> productosColocados = new List<string>();
     public int puntaje;
+    public int cantObjetos;
+    
     public void Verificar()
     {
         productosColocados.Clear();
@@ -34,6 +36,7 @@ public class ListaVerificacionFinal : MonoBehaviour
             {
                 Debug.Log("Correcto: " + nombre);
                 puntaje = puntaje + 50;
+                cantObjetos = cantObjetos + 1;
             }
             else
             {
@@ -41,7 +44,11 @@ public class ListaVerificacionFinal : MonoBehaviour
                 puntaje = puntaje - 10;
             }
             Debug.Log("Puntaje: " + puntaje);
+            PlayerPrefs.SetInt("+", puntaje);
+            Debug.Log("cantObjetos: " + cantObjetos);
+            PlayerPrefs.SetInt("o", cantObjetos);
         }
+
     }
     
 }
