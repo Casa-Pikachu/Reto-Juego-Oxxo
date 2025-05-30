@@ -31,20 +31,20 @@ public class CheckEquall : MonoBehaviour, IDropHandler
     if (item.tag == obj1.tag)
     {
       sameTag = true;
-      Debug.Log("It fucking is");
+      Debug.Log("It is");
     }
 
 
     if (item.tag == obj2.tag)
     { 
       sameTag1 = true;
-      Debug.Log("It fucking is 2");
+      Debug.Log("It is 2");
     }
 
     if (item.tag == obj3.tag)
     {
       sameTag2 = true;
-      Debug.Log("It fucking is 3");
+      Debug.Log("It is 3");
 
     }
 
@@ -62,8 +62,8 @@ public class CheckEquall : MonoBehaviour, IDropHandler
     {
       if (sameTag && sameTag1 && sameTag2)
       {
-        Debug.Log($"EndDrag:  {estante.GetChild(2).GetComponent<Image>()}");
-        Debug.Log("Three yes");
+        GameManager.Instance.SFX.bien(); 
+
         Image img = estante.GetChild(0).GetComponent<Image>();
         img.raycastTarget = false;
 
@@ -77,42 +77,34 @@ public class CheckEquall : MonoBehaviour, IDropHandler
         Manager.checkEstantes();
         UIController.AddPoints(30);  
 
-        Debug.Log($"{PlayerPrefs.GetInt("cantidad")}");
       }
       else
       {
+        GameManager.Instance.SFX.mal(); 
         UIController.SubPoints(5); 
         for (int i = estante.childCount - 1; i >= 0; i--)
-        {
-          Debug.Log($"{estante.childCount}");
-          Destroy(estante.GetChild(i).gameObject);
-        }
+      {
+        Destroy(estante.GetChild(i).gameObject);
+      }
 
         if (sameTag)
         {
           sameTag = false;
-          Debug.Log($"1 {sameTag}");
         }
         if (sameTag1)
         {
           sameTag1 = false;
-          Debug.Log($"2 {sameTag1}");
         }
         if (sameTag2)
         {
           sameTag2 = false;
-          Debug.Log($"3 {sameTag2}");
         }
       }
 
     }
 
-    }
+  }
   
-
-
-
-
 }
 
 

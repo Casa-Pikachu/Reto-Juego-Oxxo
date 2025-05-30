@@ -2,21 +2,29 @@ using System;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    //public SFXManager SFXManager;
-    //public GameObject item;
-
+    public SFXEstantes SFX;
 
     void Awake()
     {
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        Instance.SetReferences(); 
     }
 
+    void SetReferences()
+    {
+      if(SFX == null)
+        {            
+            SFX = FindFirstObjectByType<SFXEstantes>();
+        }
+    }
+    
     public int GetEstantes()
     {
         return PlayerPrefs.GetInt("cantidad");
@@ -26,7 +34,7 @@ public class GameManager : MonoBehaviour
     {
         if (GetEstantes() == 6)
         {
-            endScene();
+            endScene(); 
         }
     }
 
@@ -45,8 +53,4 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("cantidad", stand);
         }
     }
-    
-
-
-
 }
