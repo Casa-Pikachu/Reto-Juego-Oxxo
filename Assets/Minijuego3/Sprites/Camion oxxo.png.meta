@@ -298,7 +298,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Camion oxxo_0: -1545674396003735579
+      Camion oxxo_1: 1892223860989603892
+      Camion oxxo_2: -5235209883046440653
+      Camion oxxo_3: -7365292152128446003
+      Camion oxxo_4: 7862352483869534059
+      Camion oxxo_5: 7159843449463240938
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

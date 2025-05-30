@@ -7,21 +7,32 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 {
     [SerializeField] private Canvas canvas;
     private RectTransform rectTransform;
+    public bool isLocked; 
     
-    private void Awake(){
+    private void Awake()
+    {
         rectTransform = GetComponent<RectTransform>();
     }
 
-    public void OnBeginDrag(PointerEventData eventData){
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        Debug.Log("OnBeginDrag");
     }
 
-    public void OnDrag(PointerEventData eventData){
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (!isLocked)
+        {
+            rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+            Debug.Log("OnDrag");
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData){
     }
 
-    public void OnEndDrag(PointerEventData eventData){
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        isLocked = true; 
     }
 }
