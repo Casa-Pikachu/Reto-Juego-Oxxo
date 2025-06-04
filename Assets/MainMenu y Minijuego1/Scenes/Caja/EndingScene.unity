@@ -1040,8 +1040,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e0af56410e705d428206204e2ddac42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PuntajeText: {fileID: 1060211778}
-  ExpText: {fileID: 470900734}
 --- !u!4 &497744069
 Transform:
   m_ObjectHideFlags: 0
@@ -1307,6 +1305,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629325621}
   m_CullTransparentMesh: 1
+--- !u!1 &739128956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 739128958}
+  - component: {fileID: 739128957}
+  m_Layer: 0
+  m_Name: UISET
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &739128957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739128956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a30a0df40460a51439bf5e6f15c51d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puntaje: {fileID: 470900734}
+  monedas: {fileID: 1060211778}
+--- !u!4 &739128958
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739128956}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.3501196, y: 3.8616993, z: 3494.245}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &990116403
 GameObject:
   m_ObjectHideFlags: 0
@@ -3437,3 +3481,4 @@ SceneRoots:
   - {fileID: 342392672}
   - {fileID: 1236404760}
   - {fileID: 1716158663}
+  - {fileID: 739128958}

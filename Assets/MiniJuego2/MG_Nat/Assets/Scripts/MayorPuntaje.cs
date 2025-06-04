@@ -10,7 +10,7 @@ public class MayorPuntaje : MonoBehaviour
 
     public void Start()
     {
-        string linkGet = "https://10.22.222.92:7149/Ranking/GetPrimero";
+        string linkGet = "https://10.22.238.41:7149/Ranking/Primero";
         RankingMini2 newRank = GetPrimero(linkGet);
 
         puntajeText.text = newRank.puntaje.ToString();
