@@ -48,13 +48,17 @@ public class LoginManager : MonoBehaviour
             {
 
                 FindFirstObjectByType<GameController>().ActiveMenuPageScene();
-
+                PlayerPrefs.SetInt("IdUsuario", user.id_usuario);
+                PlayerPrefs.SetInt("ExperienciaUsuario", user.experiencia);
+                PlayerPrefs.SetInt("PuntosUsuario", user.puntos);
             }
+
             else
             {
                 feedbackText.text = "Credenciales incorrectas.";
             }
         }
+        
         else
         {
             feedbackText.text = "Error al conectar con el servidor.";
