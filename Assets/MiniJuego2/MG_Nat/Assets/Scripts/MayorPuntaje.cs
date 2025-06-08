@@ -16,16 +16,14 @@ public class MayorPuntaje : MonoBehaviour
         puntajeText.text = newRank.puntaje.ToString();
     }
 
+
     public void Update()
     {
-        
-
-        if (PlayerPrefs.GetInt("Tiempo") == 0)
+        if (PlayerPrefs.GetInt("Tiempo") == 0 || PlayerPrefs.GetInt("cantidad") == 6)
         {
-            string linkPost = "https://192.168.68.110:7149/Ranking/PostRanking";                PostPrimero(linkPost);
-            PlayerPrefs.SetInt("Tiempo", 1);
+            string linkPost = "https://192.168.68.110:7149/Ranking/PostRanking";
+            PostPrimero(linkPost);
         }
-
     }
 
 

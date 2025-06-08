@@ -1023,6 +1023,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainAudioMixer: {fileID: 24100000, guid: c607be29c0f2a4e678262da26d6b9dc7, type: 2}
+  masterS: {fileID: 1140863554}
+  musicS: {fileID: 1492133694}
+  sfxS: {fileID: 1222831243}
 --- !u!1 &180238878
 GameObject:
   m_ObjectHideFlags: 0
@@ -7108,10 +7111,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1220051276}
   m_HandleRect: {fileID: 1070643814}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0.0001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -7815,10 +7818,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 668676030}
   m_HandleRect: {fileID: 1839771263}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0.0001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -9845,10 +9848,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 41518370}
   m_HandleRect: {fileID: 918197488}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0.0001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:

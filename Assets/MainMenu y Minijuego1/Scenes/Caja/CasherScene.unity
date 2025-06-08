@@ -1386,10 +1386,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 2003337858}
   m_HandleRect: {fileID: 2124844118}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0.0001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2448,10 +2448,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1141052172}
   m_HandleRect: {fileID: 1157827744}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0.0001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -3138,6 +3138,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainAudioMixer: {fileID: 24100000, guid: c607be29c0f2a4e678262da26d6b9dc7, type: 2}
+  masterS: {fileID: 995834877}
+  musicS: {fileID: 232942851}
+  sfxS: {fileID: 576804955}
 --- !u!1 &818040370
 GameObject:
   m_ObjectHideFlags: 0
@@ -4154,10 +4157,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 54711284}
   m_HandleRect: {fileID: 1051560631}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0.0001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -5391,6 +5394,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1296497245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1296497246}
+  - component: {fileID: 1296497247}
+  m_Layer: 0
+  m_Name: EndSceneController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1296497246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296497245}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1697.0906, y: 870.09143, z: -6.8235073}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1296497247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296497245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0af56410e705d428206204e2ddac42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1328011356
 GameObject:
   m_ObjectHideFlags: 0
@@ -6781,7 +6828,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1296497247}
         m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
@@ -8017,3 +8064,4 @@ SceneRoots:
   - {fileID: 873714182}
   - {fileID: 1528658349}
   - {fileID: 1527680966}
+  - {fileID: 1296497246}
