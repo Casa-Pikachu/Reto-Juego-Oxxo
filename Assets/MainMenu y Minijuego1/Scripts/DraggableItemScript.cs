@@ -14,7 +14,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     private void Start()
     {
-        string mediaUrl = "https://10.22.238.41:7149/Precios/GetPrecio/";
+        string mediaUrl = "https:192.168.1.103//:7149/Precios/GetPrecio/";
 
         itemPrice = GetPrecio(mediaUrl, itemName).precio_articulo;
     }
