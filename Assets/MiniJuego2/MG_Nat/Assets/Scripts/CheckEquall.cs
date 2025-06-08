@@ -13,6 +13,7 @@ public class CheckEquall : MonoBehaviour, IDropHandler
   public GameObject obj3;
   public GameManager Manager;
   public UIController UIController;
+  public SFXEstantes audio; 
 
   bool sameTag = false;
   bool sameTag1 = false;
@@ -62,7 +63,7 @@ public class CheckEquall : MonoBehaviour, IDropHandler
     {
       if (sameTag && sameTag1 && sameTag2)
       {
-        GameManager.Instance.SFX.bien(); 
+        GameManager.Instance.SFX.bien();
 
         Image img = estante.GetChild(0).GetComponent<Image>();
         img.raycastTarget = false;
@@ -75,17 +76,18 @@ public class CheckEquall : MonoBehaviour, IDropHandler
 
         Manager.UpdateEstantes();
         Manager.checkEstantes();
-        UIController.AddPoints(30);  
+        UIController.AddPoints(30);
+       GameManager.Instance.SFX.bien(); 
 
       }
       else
       {
-        GameManager.Instance.SFX.mal(); 
-        UIController.SubPoints(5); 
+        GameManager.Instance.SFX.mal();
+        UIController.SubPoints(5);
         for (int i = estante.childCount - 1; i >= 0; i--)
-      {
-        Destroy(estante.GetChild(i).gameObject);
-      }
+        {
+          Destroy(estante.GetChild(i).gameObject);
+        }
 
         if (sameTag)
         {
