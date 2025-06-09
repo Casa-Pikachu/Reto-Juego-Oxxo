@@ -41,7 +41,7 @@ public class FondoNivelUI : MonoBehaviour
         }
         else
         {
-            Debug.Log("liga_nivel vacia");
+            Debug.Log("liga_nivel (de la bd o endpoint checar) vacia");
         }
     }
 
