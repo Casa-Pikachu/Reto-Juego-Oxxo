@@ -48,7 +48,7 @@ public class GetPodio : MonoBehaviour
 
             if (userPosition >= 0 && userPosition < 10)
             {
-                posiciones[userPosition].color = Color.grey;
+                posiciones[userPosition].color = new Color(0f, 0f, 139f/255f) ;
 
                 if (usuariosList.Count > 10)
                 {
@@ -57,7 +57,7 @@ public class GetPodio : MonoBehaviour
                     posicionExtra.text = $"{siguiente.nombre} - {siguiente.experiencia} XP";
 
                     if (siguiente.id_usuario == userId)
-                        posicionExtra.color = Color.grey;
+                        posicionExtra.color = new Color(0f, 0f, 139f/255f) ;
                     else
                         posicionExtra.color = Color.black;
                 }
@@ -72,7 +72,7 @@ public class GetPodio : MonoBehaviour
                 var usuario = usuariosList[userPosition];
                 posicionExtraNumero.text = $"#{userPosition + 1}";
                 posicionExtra.text = $"{usuario.nombre} - {usuario.experiencia} XP";
-                posicionExtra.color = Color.grey;
+                posicionExtra.color = new Color(0f, 0f, 139f/255f) ;
             }
             else
             {
