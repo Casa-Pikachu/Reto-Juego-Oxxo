@@ -5,12 +5,13 @@ using System.Collections;
 
 public class FondoNivelUI : MonoBehaviour
 {
-    public Image fondoUI;
-    private string apiNivel = "https://192.xxx:7149/Niveles/GetNivelimg/";
+    //public Image fondoUI;
+    public SpriteRenderer fondoSprite;
+    private string apiNivel = "https://10.22.179.245:7149/Niveles/GetNivelimg/";
 
     void Start()
     {
-        //porfa no le cambien nada a login porque esta ligado a eso 
+        //porfa no le cambien nada a login 
         
         int experiencia = PlayerPrefs.GetInt("ExperienciaUsuario", 0);
         int nivel = (experiencia / 100) + 1;
@@ -21,12 +22,13 @@ public class FondoNivelUI : MonoBehaviour
     IEnumerator CargarFondoNivel(int nivel)
     {
         string url = apiNivel + nivel;
+        Debug.Log("Consultando fondo desde: " + url);
         UnityWebRequest request = UnityWebRequest.Get(url);
         request.certificateHandler = new ForceAcceptAll();
         yield return request.SendWebRequest();
         if (request.result != UnityWebRequest.Result.Success)
         {
-            Debug.Log("Error");
+            Debug.LogError("No funciona: " + request.error);
             yield break;
         }
 
@@ -53,13 +55,11 @@ public class FondoNivelUI : MonoBehaviour
             Debug.LogError("Error al descargar imagen: " + imgRequest.error);
             yield break;
         }
-        /*esta parte no la he podido configurar en unity porque lo quise 
-        poner en el area de trabajo siendo canvas y lo asigne a la camara
-        preguntar a claudia asap*/
         Texture2D tex = DownloadHandlerTexture.GetContent(imgRequest);
         Sprite sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
-
-        fondoUI.sprite = sprite;
+        //fondoUI.sprite = sprite;
+        fondoSprite.sprite = sprite;
+        fondoSprite.transform.localScale = new Vector3(8f, 8f, 1f);
         Debug.Log("Fondo actualizado");
     }
 

@@ -35,8 +35,7 @@ public class GameOverV3 : MonoBehaviour
         /*team: comente monedas porque vi que no lo usaban pero si cambian de opinion solo 
         descomenten y congan int monedas, lit lo trae de lista verificadora 
         puse que te diera una moneda por cada objeto que tienes bien
-        tambien puse en xxxx el ip porque no queria que saliera el ip de mi casa, sorry si no di 
-        tantos commits */
+        tambien */
         int idUsuario = PlayerPrefs.GetInt("IdUsuario");
         int puntosPrevios = PlayerPrefs.GetInt("PuntosUsuario", 0);
         //int monedasPrevias = PlayerPrefs.GetInt("MonedasUsuario", 0);
@@ -52,9 +51,9 @@ public class GameOverV3 : MonoBehaviour
 
         
 
-        StartCoroutine(EnviarPUT("https://192.xxx:7149/Usuarios/UpdatePuntos", $"{idUsuario}/{nuevosPuntos}"));
-        // StartCoroutine(EnviarPUT("https://192.xxx:7149/Usuarios/UpdateMonedas", $"{idUsuario}/{nuevasMonedas}"));
-        StartCoroutine(EnviarPUT("https://192.xxx:7149/Usuarios/UpdateExperiencia", $"{idUsuario}/{nuevaExperiencia}"));
+        StartCoroutine(EnviarPUT("https://10.22.179.245:7149/Usuarios/UpdatePuntos", $"{idUsuario}/{nuevosPuntos}"));
+        // StartCoroutine(EnviarPUT("https://10.22.179.245:7149/Usuarios/UpdateMonedas", $"{idUsuario}/{nuevasMonedas}"));
+        StartCoroutine(EnviarPUT("https://10.22.179.245:7149/Usuarios/UpdateExperiencia", $"{idUsuario}/{nuevaExperiencia}"));
         
 
     }
