@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class SFXEstantes : MonoBehaviour
 {
@@ -6,21 +8,26 @@ public class SFXEstantes : MonoBehaviour
     public AudioClip estante;
     public AudioClip drop;
     public AudioClip borrar;
+    [SerializeField] AudioSource sfxSource;
+     public AudioMixer mainAudioMixer;
 
     public void bien()
     {
-        AudioSource.PlayClipAtPoint(estante, Camera.main.transform.position, 0.5f); //Bajamos el volumen 
+        sfxSource.clip = estante;
+        sfxSource.Play();
     }
 
     public void tirar()
     {
-        AudioSource.PlayClipAtPoint(drop, Camera.main.transform.position, 0.5f); //Bajamos el volumen 
+        sfxSource.clip = drop;
+        sfxSource.Play();
     }
-    
+
 
     public void mal()
     {
-        AudioSource.PlayClipAtPoint(borrar,Camera.main.transform.position, 0.5f); //Bajamos el volumen 
+        sfxSource.clip = borrar;
+        sfxSource.Play();
     }
 
     

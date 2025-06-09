@@ -23,8 +23,11 @@ public class GetPodio : MonoBehaviour
 
     void Start()
     {
+    
         string mediaUrl = "https://10.22.168.234:7222/Usuarios/GetTopExperiencia";
         //string mediaUrl = "https://192.168.2.141:7222/Usuarios/GetTopExperiencia";
+        //string mediaUrl = "https://192.168.68.110:7149/Usuarios/GetTopExperiencia";
+
         usuariosList = GetTopExp(mediaUrl);
         int userId = PlayerPrefs.GetInt("IdUsuario");
 
