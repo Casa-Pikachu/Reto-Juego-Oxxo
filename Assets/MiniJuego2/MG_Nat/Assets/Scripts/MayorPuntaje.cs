@@ -10,22 +10,20 @@ public class MayorPuntaje : MonoBehaviour
 
     public void Start()
     {
-        string linkGet = "https://10.22.238.41:7149/Ranking/Primero";
+        string linkGet = "https://192.168.68.110:7149/Ranking/Primero";
         RankingMini2 newRank = GetPrimero(linkGet);
 
         puntajeText.text = newRank.puntaje.ToString();
     }
 
+
     public void Update()
     {
-        
-
-        if (PlayerPrefs.GetInt("Tiempo") == 0)
+        if (PlayerPrefs.GetInt("Tiempo") == 0 || PlayerPrefs.GetInt("cantidad") == 6)
         {
-            string linkPost = "https://10.22.222.92:7149/Ranking/PostRanking";                PostPrimero(linkPost);
-            PlayerPrefs.SetInt("Tiempo", 1);
+            string linkPost = "https://192.168.68.110:7149/Ranking/PostRanking";
+            PostPrimero(linkPost);
         }
-
     }
 
 

@@ -13,7 +13,7 @@ public class GetPodio : MonoBehaviour
 
     void Start()
     {
-        string mediaUrl = "https://10.22.238.41:7149/Usuarios/GetTopExperiencia";
+        string mediaUrl = "https://192.168.68.110:7149/Usuarios/GetTopExperiencia";
 
         usuariosList = GetTopExp(mediaUrl);
 

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class DnD : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     public Image image;
-   // public SFXEstantes SFX;
+    public SFXEstantes SFX;
     [HideInInspector] public Transform parentAfterDrag; //modificamos el padre del item para que cambie el grid
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -27,7 +27,7 @@ public class DnD : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandl
 
     public void OnEndDrag(PointerEventData eventData)
     { 
-         GameManager.Instance.SFX.tirar();
+       GameManager.Instance.SFX.tirar();
 
         transform.SetParent(parentAfterDrag);
         image.raycastTarget = true;
