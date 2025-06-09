@@ -59,7 +59,7 @@ public class FondoNivelUI : MonoBehaviour
         Sprite sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
         //fondoUI.sprite = sprite;
         fondoSprite.sprite = sprite;
-        fondoSprite.transform.localScale = new Vector3(8f, 8f, 1f);
+        fondoSprite.transform.localScale = new Vector3(7.5f, 7.5f, 1f);
         Debug.Log("Fondo actualizado");
     }
 
