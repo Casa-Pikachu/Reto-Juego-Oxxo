@@ -26,10 +26,10 @@ public class GameOverV3 : MonoBehaviour
         winLoseText.text = (puntosPartida >= 300) ? "Ganaste" : "Sigue Practicando";
 
         // Actualizar base de datos sumando a los valores acumulados
-        ActualizarDatosEnServidor(puntosPartida, experienciaPartida);
+        ActualizarDatosEnServidor(puntosPartida, experienciaPartida, monedasPartida);
     }
 
-    void ActualizarDatosEnServidor(int puntos, int experiencia)
+    void ActualizarDatosEnServidor(int puntos, int experiencia, int monedas)
     {
 
         /*team: comente monedas porque vi que no lo usaban pero si cambian de opinion solo 
@@ -38,21 +38,21 @@ public class GameOverV3 : MonoBehaviour
         tambien */
         int idUsuario = PlayerPrefs.GetInt("IdUsuario");
         int puntosPrevios = PlayerPrefs.GetInt("PuntosUsuario", 0);
-        //int monedasPrevias = PlayerPrefs.GetInt("MonedasUsuario", 0);
+        int monedasPrevias = PlayerPrefs.GetInt("MonedasUsuario", 0);
         int experienciaPrevia = PlayerPrefs.GetInt("ExperienciaUsuario", 0);
         int nuevosPuntos = puntosPrevios + puntos;
-        // int nuevasMonedas = monedasPrevias + monedas;
+        int nuevasMonedas = monedasPrevias + monedas;
         int nuevaExperiencia = experienciaPrevia + experiencia;
 
         
         PlayerPrefs.SetInt("PuntosUsuario", nuevosPuntos);
-        //PlayerPrefs.SetInt("MonedasUsuario", nuevasMonedas);
+        PlayerPrefs.SetInt("MonedasUsuario", nuevasMonedas);
         PlayerPrefs.SetInt("ExperienciaUsuario", nuevaExperiencia);
 
         
 
         StartCoroutine(EnviarPUT("https://10.22.179.245:7149/Usuarios/UpdatePuntos", $"{idUsuario}/{nuevosPuntos}"));
-        // StartCoroutine(EnviarPUT("https://10.22.179.245:7149/Usuarios/UpdateMonedas", $"{idUsuario}/{nuevasMonedas}"));
+        StartCoroutine(EnviarPUT("https://10.22.179.245:7149/Usuarios/UpdateMonedas", $"{idUsuario}/{nuevasMonedas}"));
         StartCoroutine(EnviarPUT("https://10.22.179.245:7149/Usuarios/UpdateExperiencia", $"{idUsuario}/{nuevaExperiencia}"));
         
 
