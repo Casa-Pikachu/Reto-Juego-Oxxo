@@ -14,10 +14,14 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     private void Start()
     {
+
+        //string mediaUrl = "https://10.22.179.245:7149/Precios/GetPrecio/";
+
     
         string mediaUrl = "https://10.22.168.234:7222/Precios/GetPrecio/";
         //string mediaUrl = "https://192.168.2.141:7222/Precios/GetPrecio";
         //string mediaUrl = "https://192.168.68.110:7149/Precios/GetPrecio/";
+
 
         itemPrice = GetPrecio(mediaUrl, itemName).precio_articulo;
     }
