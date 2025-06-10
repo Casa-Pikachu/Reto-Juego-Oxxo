@@ -10,7 +10,7 @@ public class SetUI : MonoBehaviour
     void Start()
     {
         experienciaText.text = PlayerPrefs.GetInt("ExperienciaUsuario").ToString();
-        nivelText.text = (PlayerPrefs.GetInt("ExperienciaUsuario") / 1000 + 1).ToString();
-        // puntosText.text = PlayerPrefs.GetInt("PuntosUsuario").ToString();
+        nivelText.text = (PlayerPrefs.GetInt("ExperienciaUsuario") / 100 + 1).ToString();
+        //puntosText.text = PlayerPrefs.GetInt("PuntosUsuario").ToString();
     }
 }
