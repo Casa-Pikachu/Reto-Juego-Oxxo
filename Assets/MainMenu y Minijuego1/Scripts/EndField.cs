@@ -205,11 +205,6 @@ public class EndField : MonoBehaviour, IDropHandler
     {
         if (PlayerPrefs.GetInt("Time") <= 0)
         {
-
-            //string postURL = "https://10.22.179.245:7149/Ranking/PostRanking";
-            //string puntosURL = "https://10.22.179.245:7149/Usuarios/UpdatePuntos";
-            //string expURL = "https://10.22.179.245:7149/Usuarios/UpdateExperiencia";
-
             string postURL = "https://10.22.168.234:7222/Ranking/PostRanking";
             string puntosURL = "https://10.22.168.234:7222/Usuarios/UpdatePuntos";
             string expURL = "https://10.22.168.234:7222/Usuarios/UpdateExperiencia";
@@ -217,7 +212,6 @@ public class EndField : MonoBehaviour, IDropHandler
             //string postURL = "https://192.168.2.141:7222/Ranking/PostRanking";
             //string puntosURL = "https://192.168.2.141:7222/Usuarios/UpdatePuntos";
             //string expURL = "https://192.168.2.141:7222/Usuarios/UpdateExperiencia";
-
 
             int newPuntaje = PlayerPrefs.GetInt("Puntos") + PlayerPrefs.GetInt("PuntosUsuario");
             int newEXP = PlayerPrefs.GetInt("ExperienciaUsuario") + (newPuntaje / 10);

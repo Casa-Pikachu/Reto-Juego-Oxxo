@@ -17,7 +17,6 @@ public class MenuScene : MonoBehaviour
 
 
     public Timer timer;
-    public ListaVerificacionFinal puntaje;
 
 
 
@@ -30,18 +29,6 @@ public class MenuScene : MonoBehaviour
             if (timer.remainingDuration <= 0)
             {
                 Debug.Log("Se acabo el tiempo");
-
-
-                ListaVerificacionFinal verificador = FindFirstObjectByType<ListaVerificacionFinal>();
-                if (verificador != null)
-                {
-                    verificador.Verificar();
-                    PlayerPrefs.Save();
-                }
-                else
-                {
-                    Debug.Log("No hay lista");
-                }
                 int siguiente = SceneManager.GetActiveScene().buildIndex + 1;
                 SceneManager.LoadScene(siguiente);
             }
@@ -49,6 +36,11 @@ public class MenuScene : MonoBehaviour
          
 
     }
+
+
+    public ListaVerificacionFinal puntaje;
+
+    
 
 
 
