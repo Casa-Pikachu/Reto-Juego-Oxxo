@@ -8,6 +8,7 @@ public class ListaVerificacionFinal : MonoBehaviour
     public List<string> productosColocados = new List<string>();
     public int puntaje;
     public int cantObjetos;
+
     public int experiencia;
     
     public void Verificar()
@@ -20,6 +21,7 @@ public class ListaVerificacionFinal : MonoBehaviour
             {
                 GameObject producto = slot.GetChild(0).gameObject;
                 string nombre = producto.name;
+
                 productosColocados.Add(nombre);
                 Debug.Log("Producto en slot: " + nombre);
 
@@ -45,13 +47,11 @@ public class ListaVerificacionFinal : MonoBehaviour
                 puntaje = puntaje - 10;
             }
             Debug.Log("Puntaje: " + puntaje);
-            
-            Debug.Log("monedas: " + cantObjetos);
-         
-            Debug.Log("expeirencia: " + experiencia);
-            PlayerPrefs.SetInt("puntos_usuario", puntaje);
-            PlayerPrefs.SetInt("monedas_usuario", cantObjetos);
-            PlayerPrefs.SetInt("experiencia_usuario", experiencia);
+            PlayerPrefs.SetInt("+", puntaje);
+            Debug.Log("cantObjetos: " + cantObjetos);
+            PlayerPrefs.SetInt("o", cantObjetos);
+            Debug.Log("exp: " + experiencia);
+            PlayerPrefs.SetInt("x", experiencia);
         }
 
     }

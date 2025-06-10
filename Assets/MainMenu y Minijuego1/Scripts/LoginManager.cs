@@ -10,11 +10,8 @@ public class LoginManager : MonoBehaviour
     public Button loginButton;
     public Text feedbackText; // para mostrar mensajes al usuario
 
-    //private string baseURL = "https://10.22.179.245:7149/Usuarios/CheckUsrPass"; // Cambia el puerto si usas otro
-
     private string baseURL = "https://10.22.168.234:7222/Usuarios/CheckUsrPass"; // Cambia el puerto si usas otro
     //private string baseURL = "https://192.168.2.141:7222/Usuarios/CheckUsrPass"; 
-
 
     void Start()
     {
