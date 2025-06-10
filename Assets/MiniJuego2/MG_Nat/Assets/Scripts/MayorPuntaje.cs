@@ -11,23 +11,12 @@ public class MayorPuntaje : MonoBehaviour
     public void Start()
     {
         string linkGet = "https://192.168.2.141:7222/Ranking/GetFirst";
-        RankingMini2 newRank = GetFirst(linkGet);
+        RankingMini2 newRank = GetPrimero(linkGet);
 
         puntajeText.text = newRank.puntaje.ToString();
     }
 
-
-    public void Update()
-    {
-        if (PlayerPrefs.GetInt("Tiempo") == 0 || PlayerPrefs.GetInt("cantidad") == 6)
-        {
-            string linkPost = "https://192.168.2.141:7222/Ranking/PostRanking";
-            PostPrimero(linkPost);
-        }
-    }
-
-
-    RankingMini2 GetFirst(string puntaje)
+    RankingMini2 GetPrimero(string puntaje)
     {
         UnityWebRequest request = UnityWebRequest.Get(puntaje);
         request.certificateHandler = new ForceAcceptAll();
@@ -46,25 +35,5 @@ public class MayorPuntaje : MonoBehaviour
         return ranking;
     }
 
-    void PostPrimero(string mediaURL)
-    {
-        RankingMini2 ranking = new RankingMini2
-        {
-            puntaje = PlayerPrefs.GetInt("puntos"),
-            fecha_puntaje = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-            id_usuario = 1,
-            //id_usuario = PlayerPrefs.GetInt("IdUsuario"),
-            id_minijuego = 2
-        };
-
-        string jsonData = JsonConvert.SerializeObject(ranking);
-        UnityWebRequest request = new UnityWebRequest(mediaURL, "POST");
-        request.certificateHandler = new ForceAcceptAll();
-
-        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonData);
-        request.uploadHandler = new UploadHandlerRaw(bodyRaw);
-        request.downloadHandler = new DownloadHandlerBuffer();
-        request.SetRequestHeader("Content-Type", "application/json");
-        request.SendWebRequest();
-    }
+    
 }

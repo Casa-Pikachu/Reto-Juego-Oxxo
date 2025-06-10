@@ -11,7 +11,6 @@ public class UIController : MonoBehaviour
     { 
         PuntosText.text = "Puntaje: " + puntajeActual;
         PlayerPrefs.SetInt("puntos", 0);
-        PlayerPrefs.SetInt("Tiempo", 1);
     }
 
     public void AddPoints(int _points)
