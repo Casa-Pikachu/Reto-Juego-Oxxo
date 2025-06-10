@@ -7,7 +7,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 {
     [SerializeField] private Canvas canvas;
     private RectTransform rectTransform;
-    public bool isLocked; 
+    public bool isLocked;
+
     
     private void Awake()
     {

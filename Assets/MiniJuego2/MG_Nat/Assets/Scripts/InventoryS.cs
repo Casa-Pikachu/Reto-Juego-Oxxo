@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class InventoryS : MonoBehaviour, IDropHandler //se llama cuando esta onDrop
 {
     [SerializeField] float numObj;
+    public SFXEstantes SFX;
     public void OnDrop(PointerEventData eventData)
     {
         if (transform.childCount < numObj)
@@ -14,6 +15,8 @@ public class InventoryS : MonoBehaviour, IDropHandler //se llama cuando esta onD
             GameObject dropped = eventData.pointerDrag;
             DnD dragItem = dropped.GetComponent<DnD>();
             dragItem.parentAfterDrag = transform;
-         }
+            GameManager.Instance.SFX.tirar(); 
+
+        }
     } 
 }

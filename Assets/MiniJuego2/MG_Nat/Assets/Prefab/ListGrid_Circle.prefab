@@ -56,6 +56,7 @@ MonoBehaviour:
   - {fileID: 818649267648448209, guid: d66cb85bd76ff4ecc99481114a0ba179, type: 3}
   - {fileID: 81381784902675920, guid: 8fd83dc7a6232460c966bfc137fc5a45, type: 3}
   randParent: {fileID: 7660033834673537706}
+  CheckEqual: {fileID: 0}
 --- !u!1 &3652263418581745589
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,6 +151,7 @@ MonoBehaviour:
   - {fileID: 818649267648448209, guid: d66cb85bd76ff4ecc99481114a0ba179, type: 3}
   - {fileID: 81381784902675920, guid: 8fd83dc7a6232460c966bfc137fc5a45, type: 3}
   randParent: {fileID: 7660033834673537706}
+  CheckEqual: {fileID: 0}
 --- !u!1 &7694147440218741486
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,3 +208,4 @@ MonoBehaviour:
   - {fileID: 818649267648448209, guid: d66cb85bd76ff4ecc99481114a0ba179, type: 3}
   - {fileID: 81381784902675920, guid: 8fd83dc7a6232460c966bfc137fc5a45, type: 3}
   randParent: {fileID: 7660033834673537706}
+  CheckEqual: {fileID: 0}

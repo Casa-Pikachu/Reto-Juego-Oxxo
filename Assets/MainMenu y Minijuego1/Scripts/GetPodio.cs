@@ -9,32 +9,90 @@ public class GetPodio : MonoBehaviour
     public Text posicion1;
     public Text posicion2;
     public Text posicion3;
+    public Text posicion4;
+    public Text posicion5;
+    public Text posicion6;
+    public Text posicion7;
+    public Text posicion8;
+    public Text posicion9;
+    public Text posicion10;
+    public Text posicionExtra;
+    public Text posicionExtraNumero;
+
     List<Usuarios> usuariosList;
 
     void Start()
     {
-        string mediaUrl = "https://10.22.179.245:7149/Usuarios/GetTopExperiencia";
+
+        // Magda: string mediaUrl = "https://10.22.179.245:7149/Usuarios/GetTopExperiencia";
+
+    
+        string mediaUrl = "https://10.22.168.234:7222/Usuarios/GetTopExperiencia";
+        //string mediaUrl = "https://192.168.2.141:7222/Usuarios/GetTopExperiencia";
+        //string mediaUrl = "https://192.168.68.110:7149/Usuarios/GetTopExperiencia";
+
 
         usuariosList = GetTopExp(mediaUrl);
+        int userId = PlayerPrefs.GetInt("IdUsuario");
 
         if (usuariosList != null)
         {
-            if (usuariosList.Count >= 1)
-                posicion1.text = $"{usuariosList[0].nombre} - {usuariosList[0].experiencia} XP";
+            Text[] posiciones = { posicion1, posicion2, posicion3, posicion4, posicion5, posicion6, posicion7, posicion8, posicion9, posicion10 };
 
-            if (usuariosList.Count >= 2)
-                posicion2.text = $"{usuariosList[1].nombre} - {usuariosList[1].experiencia} XP";
+            for (int i = 0; i < Mathf.Min(10, usuariosList.Count); i++)
+            {
+                var usuario = usuariosList[i];
+                posiciones[i].text = $"{usuario.nombre} - {usuario.experiencia} XP";
+            }
 
-            if (usuariosList.Count >= 3)
-                posicion3.text = $"{usuariosList[2].nombre} - {usuariosList[2].experiencia} XP";
+            int userPosition = usuariosList.FindIndex(u => u.id_usuario == userId);
+            Debug.Log($"User ID: {userId}");
+            Debug.Log($"User Position in list: {userPosition}");
+            Debug.Log($"Total usuarios: {usuariosList.Count}");
+
+            if (userPosition >= 0 && userPosition < 10)
+            {
+                posiciones[userPosition].color = new Color(0f, 0f, 139f/255f) ;
+
+                if (usuariosList.Count > 10)
+                {
+                    var siguiente = usuariosList[10];
+                    posicionExtraNumero.text = "#11";
+                    posicionExtra.text = $"{siguiente.nombre} - {siguiente.experiencia} XP";
+
+                    if (siguiente.id_usuario == userId)
+                        posicionExtra.color = new Color(0f, 0f, 139f/255f) ;
+                    else
+                        posicionExtra.color = Color.black;
+                }
+                else
+                {
+                    posicionExtraNumero.text = "";
+                    posicionExtra.text = "";
+                }
+            }
+            else if (userPosition >= 10)
+            {
+                var usuario = usuariosList[userPosition];
+                posicionExtraNumero.text = $"#{userPosition + 1}";
+                posicionExtra.text = $"{usuario.nombre} - {usuario.experiencia} XP";
+                posicionExtra.color = new Color(0f, 0f, 139f/255f) ;
+            }
+            else
+            {
+                posicionExtraNumero.text = "";
+                posicionExtra.text = "Usuario no encontrado en el ranking.";
+            }
         }
-
-
         else
         {
-            posicion1.text = "----";
-            posicion2.text = "----";
-            posicion3.text = "----";
+            Text[] posiciones = { posicion1, posicion2, posicion3, posicion4, posicion5, posicion6, posicion7, posicion8, posicion9, posicion10 };
+            foreach (Text pos in posiciones)
+            {
+                pos.text = "----";
+            }
+            posicionExtraNumero.text = "";
+            posicionExtra.text = "----";
         }
     }
 
