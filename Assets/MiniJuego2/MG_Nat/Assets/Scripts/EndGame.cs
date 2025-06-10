@@ -52,7 +52,7 @@ public class EndGame : MonoBehaviour
         {
             puntaje = PlayerPrefs.GetInt("puntos"),
             fecha_puntaje = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-            id_usuario = PlayerPrefs.GetInt("IdUsuario"),
+            id_usuario =PlayerPrefs.GetInt("IdUsuario"),
             id_minijuego = 2
         };
 
@@ -70,7 +70,7 @@ public class EndGame : MonoBehaviour
     void UpdatePuntos(string mediaURL)
     {
         int puntos = PlayerPrefs.GetInt("puntos");
-        int id = PlayerPrefs.GetInt("IdUsuario");
+        int id =PlayerPrefs.GetInt("IdUsuario");
 
         string url = $"{mediaURL}/{id}/{puntos}";
 
@@ -83,7 +83,7 @@ public class EndGame : MonoBehaviour
     void UpdateExperiencia(string mediaURL)
     {
         int experiencia = PlayerPrefs.GetInt("ExperienciaUsuario");
-        int id = PlayerPrefs.GetInt("IdUsuario");
+        int id =PlayerPrefs.GetInt("IdUsuario");
         string url = $"{mediaURL}/{id}/{experiencia}";
 
         UnityWebRequest request = UnityWebRequest.Put(url, "");
