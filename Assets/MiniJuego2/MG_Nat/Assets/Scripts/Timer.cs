@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using System.Collections;
-using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
