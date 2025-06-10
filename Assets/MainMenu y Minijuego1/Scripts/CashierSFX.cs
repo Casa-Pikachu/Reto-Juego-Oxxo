@@ -1,4 +1,6 @@
+#if UNITY_EDITOR
 using UnityEditor.Search;
+#endif
 using UnityEngine;
 
 public class CashierSFX : MonoBehaviour

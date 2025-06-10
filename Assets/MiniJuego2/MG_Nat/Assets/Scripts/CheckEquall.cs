@@ -13,7 +13,8 @@ public class CheckEquall : MonoBehaviour, IDropHandler
   public GameObject obj3;
   public GameManager Manager;
   public UIController UIController;
-  public SFXEstantes audio; 
+  public SFXEstantes audioSFX;
+
 
   bool sameTag = false;
   bool sameTag1 = false;
