@@ -25,11 +25,11 @@ public class EndGame : MonoBehaviour
 
         else if (PlayerPrefs.GetInt("cantidad") < 6 || remainingTime <= 0)
         {
-            string linkPost = "https://192.168.2.141:7222/Ranking/PostRanking";
-            string linkPuntos = "https://192.168.2.141:7222/Usuarios/UpdatePuntos";
-            string linkURL = "https://192.168.2.141:7222/Usuarios/UpdateExperiencia";
+            string linkPost = "https://10.22.168.234:7222/Ranking/PostRanking";
+            string linkPuntos = "https://10.22.168.234:7222/Usuarios/UpdatePuntos";
+            string linkURL = "https://10.22.168.234:7222/Usuarios/UpdateExperiencia";
 
-            int newPuntaje = PlayerPrefs.GetInt("Puntos") + PlayerPrefs.GetInt("PuntosUsuario");
+            int newPuntaje = PlayerPrefs.GetInt("puntos") + PlayerPrefs.GetInt("PuntosUsuario");
             int newEXP = PlayerPrefs.GetInt("ExperienciaUsuario") + (newPuntaje / 10);
 
             PlayerPrefs.SetInt("ExperienciaUsuario", newEXP);
@@ -50,9 +50,9 @@ public class EndGame : MonoBehaviour
     {
         RankingMini2 ranking = new RankingMini2
         {
-            puntaje = PlayerPrefs.GetInt("Puntos"),
+            puntaje = PlayerPrefs.GetInt("puntos"),
             fecha_puntaje = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-            id_usuario = PlayerPrefs.GetInt("IdUsuario"),
+            id_usuario =PlayerPrefs.GetInt("IdUsuario"),
             id_minijuego = 2
         };
 
@@ -70,7 +70,7 @@ public class EndGame : MonoBehaviour
     void UpdatePuntos(string mediaURL)
     {
         int puntos = PlayerPrefs.GetInt("puntos");
-        int id = PlayerPrefs.GetInt("IdUsuario");
+        int id =PlayerPrefs.GetInt("IdUsuario");
 
         string url = $"{mediaURL}/{id}/{puntos}";
 
@@ -83,7 +83,7 @@ public class EndGame : MonoBehaviour
     void UpdateExperiencia(string mediaURL)
     {
         int experiencia = PlayerPrefs.GetInt("ExperienciaUsuario");
-        int id = PlayerPrefs.GetInt("IdUsuario");
+        int id =PlayerPrefs.GetInt("IdUsuario");
         string url = $"{mediaURL}/{id}/{experiencia}";
 
         UnityWebRequest request = UnityWebRequest.Put(url, "");

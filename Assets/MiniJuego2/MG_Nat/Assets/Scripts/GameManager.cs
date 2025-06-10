@@ -19,8 +19,8 @@ public class GameManager : MonoBehaviour
 
     void SetReferences()
     {
-      if(SFX == null)
-        {            
+        if (SFX == null)
+        {
             SFX = FindFirstObjectByType<SFXEstantes>();
         }
     }
