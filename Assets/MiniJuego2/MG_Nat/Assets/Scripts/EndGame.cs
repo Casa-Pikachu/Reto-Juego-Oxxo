@@ -23,7 +23,7 @@ public class EndGame : MonoBehaviour
             remainingTime -= Time.deltaTime;
         }
 
-        else if (PlayerPrefs.GetInt("cantidad") < 6 || remainingTime <= 0)
+        if (Manager.GetEstantes() == 6 || remainingTime <= 0)
         {
             string linkPost = "https://10.22.168.234:7222/Ranking/PostRanking";
             string linkPuntos = "https://10.22.168.234:7222/Usuarios/UpdatePuntos";
