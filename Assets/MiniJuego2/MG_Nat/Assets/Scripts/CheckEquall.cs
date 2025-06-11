@@ -75,7 +75,7 @@ public class CheckEquall : MonoBehaviour, IDropHandler
         img3.raycastTarget = false;
 
         Manager.UpdateEstantes();
-        Manager.checkEstantes();
+        //Manager.checkEstantes();
         UIController.AddPoints(30);
        GameManager.Instance.SFX.bien(); 
 
